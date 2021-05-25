@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
     <title>ylf2002</title>
-    <meta name="description" content="零零小生/ 学生/ 调参侠">
+    <meta name="description" content="零零后小生/ 学生/ 调参侠">
     <meta name="keywords" content="python, c++, 机器学习， 深度学习">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="favicon.ico">
@@ -46,9 +46,9 @@
                         <div class="card-info-avatar is-center">
                             <a href="more.html" target="_blank">
                             <img class="avatar-img" src="https://www.thiswaifudoesnotexist.net/example-55838.jpg" alt="avatar">
-                            </a>>
+                            </a>
                             <div class="author-info__name">ylf2002</div>
-                            <div class="author-info__description">零零小生/ 学生/ 调参侠</div>
+                            <div class="author-info__description">零零后小生/ 学生/ 调参侠</div>
                         </div>
                         <div class="card-info-social-icons is-center">
                             <a class="social-icon" href="https://github.com/ylf2002" target="_blank">
@@ -90,6 +90,24 @@
                         <a href="https://openaccess.thecvf.com/CVPR2019_search" target="_blank">cvpr2019</a><br>
                     </div>
                 </div>
+		 <div class="card-widget card-webinfo">
+                    <div class="card-content">
+                        <div class="item-headline">
+                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            <span>站点信息</span>
+                        </div>
+                        <div class="webinfo">
+                            <div class="webinfo-item">
+                                <div class="webinfo-site-uv-name">本站访客数 :</div>
+                                <div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div>
+                            </div>
+                            <div class="webinfo-item">
+                                <div class="webinfo-site-name">本站总访问量 :</div>
+                                <div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
             <article id="page">
                 <div class="article-container">
@@ -222,6 +240,21 @@ $(function(){
     });
 });
 
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        document.title = ' 〃∀〃 人家害羞啦 ~';
+        clearTimeout(titleTime);
+    }
+    else {
+        $('[rel="icon"]').attr('href', "/favicon.ico");
+        document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;
+        titleTime = setTimeout(function () {
+            document.title = OriginTitle;
+        }, 2000);
+    }
+});
 </script>
 </body>
 </html>
