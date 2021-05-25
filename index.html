@@ -234,12 +234,12 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        document.title = ' 〃∀〃 人家害羞啦 ~';
+        document.title = ' ˚‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚ 哥哥不要人家了，呜呜~~';
         clearTimeout(titleTime);
     }
     else {
         $('[rel="icon"]').attr('href', "/favicon.ico");
-        document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;
+        document.title = '(ฅ>ω<*ฅ) 噫哥哥回来了啦 ~' + OriginTitle;
         titleTime = setTimeout(function () {
             document.title = OriginTitle;
         }, 2000);
