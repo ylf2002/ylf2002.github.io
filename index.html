@@ -1,138 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿﻿<!DOCTYPE html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>考试不挂</title>
-    <style>   
-        .d1 {
-            width: 200px;
-            height: 200px;                  
-            border: 1px solid red;        
-            display: inline-block;           
-            margin: 0px 0px 0px 0px;          
-            padding: 10px 10px 10px 10px;
-			position: absolute;
-			left: 0px;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <title>ylf2002</title>
+    <meta name="description" content="零零小生/ 学生/ 调参侠">
+    <meta name="keywords" content="python, c++, 机器学习， 深度学习">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.css">
+    <script type="text/javascript">
+        if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+            alert('朋友，上古浏览器不支持呢~');
         }
-		.d2 {
-            width: 200px;
-            height: 200px;    
-            border: 1px solid red;
-            display: inline-block;      
-            margin: 0px 0px 0px 0px;
-            padding: 10px 10px 10px 10px;
-			position: absolute;
-			right: 0px;
-        }
-       .mainbody {
-           width: 800px;
-           height: 1100px;
-           margin: 0 auto;
-       }
-       .top {
-           width: 100%;
-           height: 190px;
-           background-color: #424323;       
-           text-align: center;           
-       }
-       .top .logo {
-           width: 100%;
-           height: 165px;
-           background-image: url(images/1.jpg);
-		   style="background-attachment:fixed; background-size:100% 100%;"
-           background-repeat: no-repeat;
-           background-position: 0 0;
-           background-attachment: scroll;
-       }
-       .bottom {
-            width: 100%;
-           height: 100px;
-           background-color: orange;
-           text-align: center;
-       }
-       .middle {
-           width: 90%;
-           height: 600px;
-           background-color: purple;
-           margin: 0 auto;
-       }
-       .left {
-           float: left;    
-           width: 40%;
-           height: 100%;
-           background-color: red;
-       }
-       .center {
-           float: left;
-           width: 40%;
-           height: 100%;
-           background-color: green;
-       }
-       .right {
-           float: right;
-           width: 20%;
-           height: 100%;
-           background-color: blue;
-       }
-       .top a {
-           display: inline-block;
-           width: 100px;
-           height: 30px;
-           line-height: 30px;
-           text-decoration: none;
-           color: white;
-       }
-       .top a:hover {
-           color: yellow;
-           background-color: red;
-           font-weight: bold;         
-       }      
-    </style>	
+    </script>
 </head>
 <body>
-	
-    <div class="mainbody">
-        <div class="top">
-            <div class="logo"></div>
-            <div class="nav">
-                <a href="https://www.icourse163.org">学习网站</a>
-                <a href="https://www.bilibili.com/">劳逸结合</a>
-            </div> 				
+<div id="body-wrap">
+    <nav class="not_index_bg" id="nav" style="background-image:url(https://api.ixiaowai.cn/api/api.php)">
+        <div id="page_site-info">
+            <div id="site-title">
+                <span class="blogtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed(".blogtitle", {
+                        strings: ['天道酬勤','Heaven Rewards Diligence'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+            </div>
         </div>
-		<center>
-		<form action="http://www.baidu.com">
-       		<input type="text" name="songname" id="songname">        			
-        	<input type="submit" value="百度">
-    	</form>	
-		<h2>期末考试要挂了？</h2>
-    	<p>别急，六大复习法来帮你</p>
-		</center>
-		<div class="d1"><img src="images/0.jpg"></div>
- 		<div class="d2"><img src="images/2.jpg"></div>
-        <div class="middle">
-            <div class="left"><img src="images/3.jpg"></div>	
-            <div class="center"><img src="images/4.jpg"></div>
-            <div class="right"><img src="images/5.jpg"></div>	
+    </nav>
+    <main id="content-outer">
+        <div class="layout_page" id="content-inner">
+            <div class="aside_content" id="aside_content">
+                <div class="card-widget card-info">
+                    <div class="card-content">
+                        <div class="card-info-avatar is-center">
+                            <a href="more.html" target="_blank">
+                            <img class="avatar-img" src="https://www.thiswaifudoesnotexist.net/example-55838.jpg" alt="avatar">
+                            </a>>
+                            <div class="author-info__name">ylf2002</div>
+                            <div class="author-info__description">零零小生/ 学生/ 调参侠</div>
+                        </div>
+                        <div class="card-info-social-icons is-center">
+                            <a class="social-icon" href="https://github.com/ylf2002" target="_blank">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a class="social-icon" href="mailto:2862506026@qq.com" target="_blank">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+								
+                <div class="card-widget card-announcement">
+                    <div class="card-content">
+                        <div class="item-headline">
+                            <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                            <span>一言</span>
+                        </div>
+                        <div id="hitokoto"></div>
+                    </div>
+                </div>
+                <div class="card-widget card-announcement">
+                    <div class="card-content">
+                        <div class="item-headline">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span>今日诗词</span>
+                        </div>
+                        <div id="jinrishici-sentence"></div>
+                    </div>
+                </div>
+                <div class="card-widget card-announcement">
+                    <div class="card-content">
+                        <div class="item-headline">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span>papers</span>
+                        </div>
+                        <a href="https://arxiv.org/" target="_blank">arxiv</a><br>
+                        <a href="https://openaccess.thecvf.com/CVPR2020_search" target="_blank">cvpr2020</a><br>
+                        <a href="https://openaccess.thecvf.com/CVPR2019_search" target="_blank">cvpr2019</a><br>
+                    </div>
+                </div>
+            </div>
+            <article id="page">
+                <div class="article-container">
+                    <h2></h2>
+
+                    <hr>
+
+					<h2>技能属性</h2>
+					<div class="skillbox">
+                        <div class="skillbar">
+							<div class="skillbar-title" style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 75%">
+								<span>数据结构与算法</span>
+							</div>
+							<div class="skill-bar-percent">75%</div>
+						</div>
+						<div class="skillbar">
+							<div class="skillbar-title" style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 75%">
+								<span>python</span>
+							</div>
+							<div class="skill-bar-percent">75%</div>
+						</div>
+						<div class="skillbar">
+							<div class="skillbar-title" style="background: linear-gradient(to right, #9900FF 0%, #CC66FF 100%); width: 80%">
+								<span>c++</span>
+							</div>
+							<div class="skill-bar-percent">80%</div>
+						</div>
+						<div class="skillbar">
+							<div class="skillbar-title" style="background: linear-gradient(to right, #2196F3 0%, #42A5F5 100%); width: 40%">
+								<span>qt</span>
+							</div>
+							<div class="skill-bar-percent">40%</div>
+						</div>
+						<div class="skillbar">
+							<div class="skillbar-title" style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 10%">
+								<span>tensorflow</span>
+							</div>
+							<div class="skill-bar-percent">10%</div>
+						</div>
+						<div class="skillbar">
+							<div class="skillbar-title" style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 10%">
+								<span>pytorch</span>
+							</div>
+							<div class="skill-bar-percent">10%</div>
+						</div>
+					</div>
+
+
+                    <hr>
+					<h2>刷题</h2>
+                    <div class="tool">
+                        <a href="https://leetcode-cn.com/u/ylffly/" target="_blank">Leetcode</a><br>
+						<a href="https://www.nowcoder.com/profile/695683207/basicinfo#" target="_blank">牛客 Offer</a>				
+                    </div>
+					
+					<hr>
+                    <h2>工具</h2>
+                    <div class="tool">
+                        <a href="https://blog.csdn.net/weixin_45881426?spm=1000.2115.3001.5343" target="_blank">CSDN</a><br>
+						<a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
+						<a href="https://qiita.com/" target="_blank">qiita</a><br>												
+                    </div>
+                </div>
+            </article>
+         </div>
+    </main>
+    <footer id="footer">
+        <div id="footer-wrap">
+            <div class="copyright">&copy;2021 BY ylf2002</div>
         </div>
-        <div class="bottom">
-			<ol type="1">
-            	<li>自信复习法</li>
-            	<li>绝地求生复习法</li>
-				<li>佛系复习法</li>
-				<li>学妹复习法</li>
-				<li>睡觉复习法</li>
-        	</ol>
-		</div>
-    </div>
-	<center>
-	<textarea style="width:300px;height:75px;">
-		作者：杨礼帆
-		学号：201992097
-		班级：软1909
-		</textarea>
-	</center>
+    </footer>
+</div>
+<!--   一言、今日诗词   -->
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<!--鼠标点击效果-->
+<script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+    
+<script type="text/javascript">
+    console.clear();
+    console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
+    console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/ylf2002");
+    console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.0.0");
+
+
+(function($){
+	$.fn.snow = function(options){
+	var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
+	documentHeight 	= $(document).height(),
+	documentWidth	= $(document).width(),
+	defaults = {
+		minSize		: 10,
+		maxSize		: 20,
+		newOn		: 1000,
+		flakeColor	: "#FFFFFF" 
+	},
+	options	= $.extend({}, defaults, options);
+	var interval= setInterval( function(){
+	var startPositionLeft = Math.random() * documentWidth - 100,
+	startOpacity = 0.5 + Math.random(),
+	sizeFlake = options.minSize + Math.random() * options.maxSize,
+	endPositionTop = documentHeight - 200,
+	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+	durationFall = documentHeight * 10 + Math.random() * 5000;
+	$flake.clone().appendTo('body').css({
+		left: startPositionLeft,
+		opacity: startOpacity,
+		'font-size': sizeFlake,
+		color: options.flakeColor
+	}).animate({
+		top: endPositionTop,
+		left: endPositionLeft,
+		opacity: 0.2
+	},durationFall,'linear',function(){
+		$(this).remove()
+	});
+	}, options.newOn);
+    };
+})(jQuery);
+$(function(){
+    $.fn.snow({ 
+	    minSize: 5, /* 定义雪花最小尺寸 */
+	    maxSize: 50,/* 定义雪花最大尺寸 */
+	    newOn: 800  /* 定义密集程度，数字越小越密集 */
+    });
+});
+
+</script>
 </body>
-<footer>
-  <p>Posted by: 杨礼帆201992097</p>
-</footer>
 </html>
