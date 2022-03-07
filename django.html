@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Welcome to my blog</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-2.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">YangLifan</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+					
+					<div class="bio mb-3">An undergraduate of DLUT.<br></div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://github.com/ylf2002/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://blog.csdn.net/weixin_45881426?spm=1000.2115.3001.5343"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://leetcode-cn.com/u/ylffly/"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item active">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i> Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="#"><i class="fas fa-bookmark fa-fw mr-2"></i>待定</a>
+					</li>
+					
+				</ul>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">基于树莓派和WEB的多路传感器数据实时可视化</h2>
+					<p>源代码已开源放至<a href="https://github.com/ylf2002/Vehicle-License-Plate-Recognition" target="_blank">https://github.com/ylf2002/Vehicle-License-Plate-Recognition</a></p>
+			    </header>
+			    
+			    <div class="blog-post-body">
+					<h3 class="mt-5 mb-3"></h3>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					从传感器数据可视化角度出发。使用树莓派采集九轴姿态传感器、GPS模块传感器和USB摄像头等传感器数据，并将相关数据传输到服务器。在树莓派上，搭建好了基于node.js的服务器环境，实现了树莓派rtsp协议的视频流推流，同局域网内主机可使用播放器访问。同时，基于Django使用Python在笔记本电脑上搭建服务器获取树莓派传输的数据，并使用Highcharts图表库实现网页显示相关的数据图表和百度地图的API展示GPS信息的定位。
+				    <h3 class="mt-5 mb-3">树莓派与传感器</h3>
+				    <p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						树莓派由于有GPIO接口，相比于普通电脑，用户可以通过GPIO口和硬件进行数据交互（如UART），控制硬件工作（如LED、蜂鸣器等），读取硬件的工作状态信号（如中断信号）等，可以很方便的操作各种硬件和传感器。在树莓派上使用传感器主要是两个步骤，一是接线，二是写代码。树莓派具体GPIO信息细节如下图 
+					</p>
+				    <figure class="blog-banner">
+						<a href="https://made4dev.com"><img class="img-fluid" src="assets/images/blog/django/gpio.png" alt="image"></a>
+						<figcaption class="mt-2 text-center image-caption">接口编号定义</a></figcaption>
+					</figure>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						使用的九轴传感器型号为CJMCU-900F。具体连接方法如下图所示，使用该传感器的3.3v连接树莓派的3.3v，GND连接树莓派的GND，SCL连接树莓派的SCL.1，SDA连接树莓派的SDA.1，PS连接树莓派的3.3v。
+					</p>
+					<figure class="blog-banner">
+						<a href="https://made4dev.com"><img class="img-fluid" src="assets/images/blog/django/bmx055.png" alt="image"></a>
+						<figcaption class="mt-2 text-center image-caption">BMX055连接示意图</a></figcaption>
+					</figure>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						对GPS模块和树莓派进行连接，根据GPS模块的针脚定义和树莓派的针脚定义一共需要连接4根线：VCC 5V、GND 接地、TXD和RXD。连接完成后，通过minicom工具，获取串口数据。但在做这一步前，还需对串口通信进行配置。树莓派串口默认是关闭的，它把硬件串口（物理引脚8 TXD、10 RXD）分配给了蓝牙。设置完成后，直接在终端输入命令cat /dev/ttyS0（因人而异），即可显示相关卫星信息。
+					</p>
+					<figure class="blog-banner">
+						<a href="https://made4dev.com"><img class="img-fluid" src="assets/images/blog/django/gps.png" alt="image"></a>
+						<figcaption class="mt-2 text-center image-caption">GPS连接示意图</a></figcaption>
+					</figure>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						安装Python serial模块，通过Python编程的方式来获取串口数据。代码如下：
+					</p>
+					<pre>
+					    <code>
+import serial
+
+try:
+    serial = serial.Serial("/dev/ttyS0", 9600)
+    if serial.isOpen():
+        print('串口打开成功！\n')
+        f = open('./test.txt','w') 
+        #pass
+    else:
+        print('串口打开失败！\n')
+    while 1:
+        data = serial.readline()
+        if data.startswith('$GNGGA'):
+            line = str(data).split(',')
+            print(line)
+            print("时：",line[1][:2], "分：", line[1][2:4],"秒：", line[1][4:6])
+            jing = float(line[4][:3]) + float(line[4][3:])/60
+            wei = float(line[2][:2]) + float(line[2][2:])/60
+            print("维度:",wei,line[3])
+            print("经度:",jing,line[5])
+           
+except KeyboardInterrupt:
+    print('error')
+				    	</code>
+					</pre>
+				    <h3 class="mt-3 mb-3">Django网站</h3>
+					<h4 class="mt-3 mb-2">Model类</h4>
+				    <p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						存储数据： 需要在model.py 声明数据字段。(详见：sensor/models.py)然后，在终端输入执行以下命令即可完成数据库的表的建立。
+					</p>
+					<pre>
+						<code>
+python manage.py makemigrations    #将类转换成数据表结构
+python manage.py  migrate   #根据上一句代码生成数据表
+						</code>
+					</pre>
+					<h4 class="mt-3 mb-2">View类</h4>
+				    <p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						在/sensor/view.py中定义了两个函数，第一个为sensors():接受并向页面提交数据，第二个为get_sensors():html获取数据。在第一个函数中返回响应对象render()。即返回文本，第一个参数为 request，第二个参数为字符串（页面名称），第三个参数为字典（可选参数，向页面传递的参数：键为页面参数名，值为views参数名）。
+					</p>
+					<h4 class="mt-3 mb-2">Templates类</h4>
+				    <p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						设计了系统的html页面展示，主要使用Highcharts图表库展示x,y,z轴的加速度曲线变化图，并在此基础上以文本格式输出了全部的姿态信息。同时，我们还申请了百度的地图API，对树莓派发送来的经纬度信息做实时定位，并在位置上添加了点标记。
+					</p>
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="plate.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="ros.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				<div class="blog-comments-section">
+					<div id="disqus_thread"></div>
+					<script>
+					    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+					        var d = document, s = d.createElement('script');
+					        
+					        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+					        s.src = 'https://3wmthemes.disqus.com/embed.js';
+					        
+					        s.setAttribute('data-timestamp', +new Date());
+					        (d.head || d.body).appendChild(s);
+					    })();
+					</script>
+					<noscript>
+					    Please enable JavaScript to view the 
+					    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					        comments powered by Disqus.
+					    </a>
+					</noscript>
+				</div><!--//blog-comments-section-->
+				
+		    </div><!--//container-->
+	    </article>    
+    </div><!--//main-wrapper-->
+
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
